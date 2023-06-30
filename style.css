@@ -213,17 +213,16 @@
         border-radius: 20px;
         box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
     }
-    /* .about .title .underline{
+    .about .title .underline{
         text-decoration: underline;
         text-decoration-skip-ink: none;
         text-underline-offset: 0.4em;
-    } */
+    }
     .about .title h2{
         color: hotpink;
         font-size: 40px;
         padding-top: 120px;
         text-align: center;
-        letter-spacing: 8px;
     }
 
     .about img{
