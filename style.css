@@ -84,7 +84,7 @@
     text-decoration: none;
     font-weight: bold;
     text-transform: capitalize;
-    text-shadow: 2px 0 4px #FFBAD5;
+    text-shadow: 2px 0 4px rgb(255, 186, 213);
 }
 .dropdown-menu li a:hover{
     color: #FFBAD5;
