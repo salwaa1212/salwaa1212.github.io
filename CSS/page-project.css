@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins";
+    box-sizing: border-box;
+}
+
+/* Responsive */
+@media (min-width: 1000px) {
+
+    .hero .logo{
+        width: 120px;
+    }
+    .hero .logo img{
+        width: 100%;
+    }
+
+    /* navbar */
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: #E90074;
+    }
+    .logo{
+        color: white;
+        font-size: 35px;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+    /* content */
+    .wrap{
+        display: flex;
+        margin: 60px;
+        gap: 40px;
+    }
+    .poster{
+        width: 800px;
+    }
+    .poster img{
+        width: 100%;
+    }
+    .themes{
+        margin-top: 120px;
+    }
+    .themes .title{
+        color: #E90074;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .themes .date{
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    .themes .date .icon{
+        font-size: 28px;
+        color: #E90074;
+    }
+    .themes .date h2{
+        font-size: 24px;
+        color: #E90074;
+        margin-top: 4px;
+        align-items: center;
+        justify-content: center;
+    }
+    .themes .button a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background-color: #E90074;
+        padding: 10px 20px;
+        border-radius: 30px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 28px;
+        padding: 8px;
+        width: 140px;
+    }
+    .themes .button a:hover {
+        background-color: #F266AC;
+        transform: scale(1.05); /* Membesarkan tombol sedikit saat di-hover */
+    }
+
+    /* Footer */
+    footer{
+        position: relative;
+        width: 100%;
+        height: 80px;
+        background-color: #191919;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    footer p{
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+    }
+}

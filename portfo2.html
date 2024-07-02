@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Painting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="shortcut icon" href="Asset/project/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "League Spartan";
+            box-sizing: border-box;
+        }
+
+        .bg{
+            background-color: hotpink;
+            padding: 100px;
+            background-image: url(Asset/portfo2/bg.jpg);
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        .bg h1{
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.25); 
+            word-spacing: 10px;
+            color: hotpink;
+            font-size: 100px;
+        }
+
+        .judul{
+            padding: 100px;
+        }
+        .judul h1{
+            color: hotpink;
+            font-size: 50px;
+        }
+        .judul p{
+            padding: 80px 100px 0 100px;
+            font-size: 25px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .judul .img{
+            padding: 50px;
+            padding-left: auto;
+            padding-right: auto;
+            justify-content: center;
+            text-align: center;
+        }
+        .judul img{
+            width: 1000px;
+            height: auto;
+        }
+
+        /* Gallery */
+        .container{
+            overflow: hidden;
+            padding: 50px 0;
+        }
+        .container .main-card{
+            display: flex;
+            justify-content: space-evenly;
+            width: 200%;
+            transition: 1s;
+        }
+        #two:checked ~ .main-card{
+            margin-left: -50%;
+        }
+        #three:checked ~ .main-card{
+            margin-left: -100%;
+        }
+        .container .main-card .cards{
+            display: flex;
+        }
+        .cards .card .content{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .main-card .cards .card:hover{
+            transform: translateY(-15px);
+        }
+        .main-card .cards .card{
+            margin: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            transition: all 0.4 ease;
+        }
+        .cards .card .content img{
+            width: 100%;
+            height: 100%;
+        }
+        .container .button{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .button label{
+            height: 15px;
+            width: 15px;
+            border-radius: 20px;
+            background: #FFBAD5;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        .button label .active{
+            width: 35px;
+        }
+        #one:checked ~ .button .one{
+            width: 35px;
+        }
+        #two:checked ~ .button .one{
+            width: 15px;
+        }
+        #two:checked ~ .button .two{
+            width: 35px;
+        }
+        #three:checked ~ .button .two{
+            width: 15px;
+        }
+        #three:checked ~ .button .three{
+            width: 35px;
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        
+        .content-app{
+            padding: 50px;
+            display: flex;
+        }
+        .content-app img{
+            width: 200px;
+            height: auto;
+        }
+        .content-app p{
+            padding: 50px 0px 0px 100px;
+            width: 1000px;
+            text-align: justify;
+        }
+        .rate{
+            padding-left: 100px;
+        }
+        .rate h3{
+            font-size: 30px;
+            color: #FFBAD5;
+        }
+        .icon{
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+        }
+        .icon h5{
+            text-align: center;
+            font-size: 30px;
+            color: #FFBAD5;
+        }
+        .icon h6{
+            text-align: center;
+            font-size: 20px;
+            padding-top: 15px;
+            color: gray;
+            font-weight: 300;
+        }
+        .device{
+            display: flex;
+        }
+        
+
+        /* Footer */
+        footer{
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background-color: hotpink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        footer .emoji{
+            padding: 30px;
+            border: 5px solid white;
+            border-radius: 50%;
+            margin-top: -120px;
+            margin-bottom: 20px;
+            background-color: hotpink;
+        }
+        footer .emoji img{
+            width: 100px;
+            height: 100px;
+        }
+        footer p{
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .main-card .cards .card{
+                margin: 20px 0 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="bg">
+            <h1>Digital Painting</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="judul">
+            <h1>About</h1>
+            <p>Painting with ibis Paint X can be categorized as a type of digital design or digital painting. ibis Paint X is an application that allows users to create digital paintings or illustrations using their mobile or tablet devices. In this case, the design is done digitally using the tools and features provided by the ibis Paint X application.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="judul">
+            <h1>Gallery</h1>
+            <div class="container">
+                <input type="radio" name="dot" id="one">
+                <input type="radio" name="dot" id="two">
+                <input type="radio" name="dot" id="three">
+                <div class="main-card">
+                    <div class="cards">
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo2/img12.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo2/img11.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo2/img3.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo2/img4.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo2/img5.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo2/img6.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo2/img7.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <label for="one" class="active one"></label>
+                    <label for="two" class="two"></label>
+                    <label for="three" class="three"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section>
+        <div class="judul">
+            <h1>Device</h1>
+            <div class="content-dev">
+                <div class="device">
+                    <img src="Asset/Device/a20s.avif">
+                    <img src="Asset/Device/s6.avif">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section>
+        <div class="judul">
+            <h1>Application</h1>
+            <div class="content-app">
+                <div class="icon">
+                    <img src="Asset/portfo2/made.png">
+                </div>
+                <p>ibis Paint X is a popular and versatile drawing app downloaded more than 280 million times in total as a series, which provides over 15000 brushes, over 15000 materials, over 1000 fonts, 80 filters, 46 screentones, 27 blending modes, recording drawing processes, stroke stabilization feature, various ruler features such as radial line rulers or symmetry rulers, and clipping mask features.</p>
+            </div>
+
+            <div class="rate">
+                <h3>Rate</h3>
+                <div class="icon">
+                    <div class="star">
+                        <h5>4.5<i class="fa-solid fa-star"></i></h5>
+                        <h6>1M Reviews</h6>
+                    </div>
+                    <div class="down">
+                        <h5><i class="fa-solid fa-download"></i></h5>
+                        <h6>20 MB</h6>
+                    </div>
+                    <div class="for">
+                        <h5>3+</h5>
+                        <h6>Rate for 3+</h6>
+                    </div>
+                    <div class="downloads">
+                        <h5>100M+</h5>
+                        <h6>Downloads</h6>
+                    </div></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="emoji">
+            <img src="Asset/emoji.png"></div>
+        <p>Thankyou for visit</p>
+    </footer>
+</body>
+</html>

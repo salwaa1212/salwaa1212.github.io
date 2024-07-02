@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="shortcut icon" href="Asset/project/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "League Spartan";
+            box-sizing: border-box;
+        }
+
+        .bg{
+            background-color: hotpink;
+            padding: 100px;
+            background-image: url(Asset/portfo2/bg.jpg);
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        .bg h1{
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.25); 
+            word-spacing: 10px;
+            color: hotpink;
+            font-size: 100px;
+        }
+
+        .judul{
+            padding: 100px;
+        }
+        .judul h1{
+            color: hotpink;
+            font-size: 50px;
+        }
+        .judul p{
+            padding: 80px 100px 0 100px;
+            font-size: 25px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .judul .img{
+            padding: 50px;
+            padding-left: auto;
+            padding-right: auto;
+            justify-content: center;
+            text-align: center;
+        }
+        .judul img{
+            width: 1000px;
+            height: auto;
+        }
+
+        /* Gallery */
+        .container{
+            overflow: hidden;
+            padding: 50px 0;
+        }
+        .container .main-card{
+            display: flex;
+            justify-content: space-evenly;
+            width: 254%;
+            transition: 1s;
+        }
+        #two:checked ~ .main-card{
+            margin-left: -1000px;
+        }
+        #three:checked ~ .main-card{
+            margin-left: -2030px;
+        }
+        .container .main-card .cards{
+            display: flex;
+        }
+        .cards .card .content{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .main-card .cards .card:hover{
+            transform: translateY(-15px);
+        }
+        .main-card .cards .card{
+            margin: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            transition: all 0.4 ease;
+        }
+        .cards .card .content img{
+            width: 400px;
+            height: 100%;
+        }
+        .container .button{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .button label{
+            height: 15px;
+            width: 15px;
+            border-radius: 20px;
+            background: #FFBAD5;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        .button label .active{
+            width: 35px;
+        }
+        #one:checked ~ .button .one{
+            width: 35px;
+        }
+        #two:checked ~ .button .one{
+            width: 15px;
+        }
+        #two:checked ~ .button .two{
+            width: 35px;
+        }
+        #three:checked ~ .button .two{
+            width: 15px;
+        }
+        #three:checked ~ .button .three{
+            width: 35px;
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        
+        .content-app{
+            padding: 50px;
+            display: flex;
+        }
+        .content-app img{
+            width: 200px;
+            height: auto;
+        }
+        .content-app p{
+            padding: 50px 0px 0px 100px;
+            width: 1000px;
+            text-align: justify;
+        }
+        .rate{
+            padding-left: 100px;
+        }
+        .rate h3{
+            font-size: 30px;
+            color: #FFBAD5;
+        }
+        .icon{
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+        }
+        .icon h5{
+            text-align: center;
+            font-size: 30px;
+            color: #FFBAD5;
+        }
+        .icon h6{
+            text-align: center;
+            font-size: 20px;
+            padding-top: 15px;
+            color: gray;
+            font-weight: 300;
+        }
+        .device{
+            padding-top: 50px;
+            display: flex;
+        }
+        .device img{
+            width: 450px;
+            height: auto;
+        }
+
+        /* Footer */
+        footer{
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background-color: hotpink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        footer .emoji{
+            padding: 30px;
+            border: 5px solid white;
+            border-radius: 50%;
+            margin-top: -120px;
+            margin-bottom: 20px;
+            background-color: hotpink;
+        }
+        footer .emoji img{
+            width: 100px;
+            height: 100px;
+        }
+        footer p{
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .main-card .cards .card{
+                margin: 20px 0 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="bg">
+            <h1>Card Design</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="judul">
+            <h1>About</h1>
+            <p>This desain is a type of graphic design or user interface design (UI design). The card has several important elements, such as a title, image, description text, and links or action buttons. Additionally, the card design also considers visual aspects such as color, typography, size, and placement of these elements to make the card visually appealing and easily understood by users. In the design process, I used Remini and Canva software.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="judul">
+            <h1>Gallery</h1>
+            <div class="container">
+                <input type="radio" name="dot" id="one">
+                <input type="radio" name="dot" id="two">
+                <input type="radio" name="dot" id="three">
+                <div class="main-card">
+                    <div class="cards">
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo3/img1.png">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo3/img2.jpg">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo3/img3.png">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo3/img4.png">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo3/img15.png">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo3/img6.png">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo3/img7.jpg">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <img src="Asset/portfo3/img8.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <label for="one" class="active one"></label>
+                    <label for="two" class="two"></label>
+                    <label for="three" class="three"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section>
+        <div class="judul">
+            <h1>Device</h1>
+            <div class="content-dev">
+                <div class="device">
+                    <img src="Asset/Device/a20s.avif">
+                    <img src="Asset/Device/s6.avif">
+                    <img src="Asset/Device/laptop.png">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section>
+        <div class="judul">
+            <h1>Application</h1>
+            <div class="content-app">
+                <div class="icon">
+                    <img src="Asset/portfo3/made1.png">
+                </div>
+                <p>Canva is your free photo editor, logo maker, and video editor in one graphic design app! Design faster with powerful magic AI tools built-in Make stunning social media posts, videos, flyers, photo collages and video collages from customisable templates. Boost your graphic design skills or build your brand with the logo maker!</p>
+            </div>
+
+            <div class="rate">
+                <h3>Rate</h3>
+                <div class="icon">
+                    <div class="star">
+                        <h5>4.8<i class="fa-solid fa-star"></i></h5>
+                        <h6>12M Reviews</h6>
+                    </div>
+                    <div class="down">
+                        <h5><i class="fa-solid fa-download"></i></h5>
+                        <h6>25 MB</h6>
+                    </div>
+                    <div class="for">
+                        <h5>3+</h5>
+                        <h6>Rate for 3+</h6>
+                    </div>
+                    <div class="downloads">
+                        <h5>100M+</h5>
+                        <h6>Downloads</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-app">
+                <div class="icon">
+                    <img src="Asset/portfo3/made2.png">
+                </div>
+                <p>Create AI Avatar, Improve and restore quality of blurry, old or damaged pics. Turn your old, pixelated, blurred, or damaged pictures into high-definition photos with just one tap! Remini uses state-of-the-art Artificial Intelligence to unblur, restore, and enhance any image you want. Take your old memories and give them a new lease of life in stunning, crystal clear HD. Over 100 million photos now revitalized.</p>
+            </div>
+
+            <div class="rate">
+                <h3>Rate</h3>
+                <div class="icon">
+                    <div class="star">
+                        <h5>4.5<i class="fa-solid fa-star"></i></h5>
+                        <h6>2M Reviews</h6>
+                    </div>
+                    <div class="down">
+                        <h5><i class="fa-solid fa-download"></i></h5>
+                        <h6>33 MB</h6>
+                    </div>
+                    <div class="for">
+                        <h5>3+</h5>
+                        <h6>Rate for 3+</h6>
+                    </div>
+                    <div class="downloads">
+                        <h5>100M+</h5>
+                        <h6>Downloads</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-app">
+                <div class="icon">
+                    <img src="Asset/portfo3/made3.jpg">
+                </div>
+                <p>Join the Picsart community of over 150 million creators around the world. With the Picsart AI photo editor and video editor, you can bring your creativity to life. Create with AI tools, make professional-level collages, design and add stickers, quickly remove and swap backgrounds, choose from hundreds of stylized photo filters, turn text into art with AI Image Generator, create AI avatars and more.</p>
+            </div>
+
+            <div class="rate">
+                <h3>Rate</h3>
+                <div class="icon">
+                    <div class="star">
+                        <h5>4.2<i class="fa-solid fa-star"></i></h5>
+                        <h6>11M Reviews</h6>
+                    </div>
+                    <div class="down">
+                        <h5><i class="fa-solid fa-download"></i></h5>
+                        <h6>46 MB</h6>
+                    </div>
+                    <div class="for">
+                        <h5><i class="fa-solid fa-medal"></i></h5>
+                        <h6>Editor's Choice</h6>
+                    </div>
+                    <div class="for">
+                        <h5>12+</h5>
+                        <h6>Rate for 12+</h6>
+                    </div>
+                    <div class="downloads">
+                        <h5>1B+</h5>
+                        <h6>Downloads</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-app">
+                <div class="icon">
+                    <img src="Asset/portfo3/made4.png">
+                </div>
+                <p>CapCut is the official free Video Editor and Video Maker with Music for TikTok that is versatile and easy-to-use. In addition to its basic features, such as video editing, text, stickers, filters, colors and music, CapCut offers free advanced features, including keyframe animation, smooth slow-motion effects, chroma key, Picture-in-Picture (PIP), and stabilization to help you capture and snip moments.</p>
+            </div>
+
+            <div class="rate">
+                <h3>Rate</h3>
+                <div class="icon">
+                    <div class="star">
+                        <h5>4.4<i class="fa-solid fa-star"></i></h5>
+                        <h6>6M Reviews</h6>
+                    </div>
+                    <div class="down">
+                        <h5><i class="fa-solid fa-download"></i></h5>
+                        <h6>90 MB</h6>
+                    </div>
+                    <div class="for">
+                        <h5>3+</h5>
+                        <h6>Rate for 3+</h6>
+                    </div>
+                    <div class="downloads">
+                        <h5>500M+</h5>
+                        <h6>Downloads</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-app">
+                <div class="icon">
+                    <img src="Asset/portfo3/made5.png">
+                </div>
+                <p>App for cutting pictures and for making a picture's background transparent. This is an application for cutting pictures and for making a picture's background transparent. The resulting images can be used as stickers with other apps to make a photomontage, collage.</p>
+            </div>
+
+            <div class="rate">
+                <h3>Rate</h3>
+                <div class="icon">
+                    <div class="star">
+                        <h5>4.7<i class="fa-solid fa-star"></i></h5>
+                        <h6>860K Reviews</h6>
+                    </div>
+                    <div class="down">
+                        <h5><i class="fa-solid fa-download"></i></h5>
+                        <h6>5.4 MB</h6>
+                    </div>
+                    <div class="for">
+                        <h5>3+</h5>
+                        <h6>Rate for 3+</h6>
+                    </div>
+                    <div class="downloads">
+                        <h5>100M+</h5>
+                        <h6>Downloads</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="emoji">
+            <img src="Asset/emoji.png"></div>
+        <p>Thankyou for visit</p>
+    </footer>
+</body>
+</html>
