@@ -161,6 +161,7 @@
         width: 200px;
         height: 200px;
         border-radius: 50%;
+        margin-right: -400px;
     }
     .about-text{
         width: 600px;
@@ -264,13 +265,6 @@
         padding-top: 100px;
         text-align: center;
         padding-bottom: 40px;
-    }
-    .prject .content{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-top: 20px;
     }
     .project .container{
         position: absolute;
@@ -390,9 +384,52 @@
         transform: translateY(0px);
     }
 
+    /* Project */
+    .achieve{
+        height: 700px;
+    }
+    .achieve .title h2{
+        color: #E90074;
+        font-size: 40px;
+        padding-top: 100px;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .achieve .container{
+        position: absolute;
+        left: 0; right: 0;
+        margin: auto;
+        overflow: hidden;
+        height: 800px;
+        width: 1000px;
+    }
+    .achieve img{
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .achieve .button{
+        text-align: center;
+    }
+    .achieve .button a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background-color: #E90074;
+        padding: 10px 20px;
+        border-radius: 30px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        font-size: 16px;
+        text-align: center;
+    }
+    .achieve .button a:hover {
+        background-color: #F266AC;
+        transform: scale(1.05); /* Membesarkan tombol sedikit saat di-hover */
+    }
+
     /* Contact */
     .contact{
-        height: 400px;
+        height: 300px;
     }
     .contact .title h2{
         color: #E90074;
@@ -400,6 +437,7 @@
         padding-top: 50px;
         padding-bottom: 50px;
         text-align: center;
+        margin-top: 200px;
     }
     .sosmed{
         margin: auto;
